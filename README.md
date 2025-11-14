@@ -25,7 +25,11 @@ This project is a responsive travel package website built using simple HTML, CSS
 - Redirecting users to relevant package URLs  
 - Opening/closing the email modal  
 - Email validation  
-- Event listeners and simple DOM manipulation  
+- Event listeners and simple DOM manipulation 
+
+## Preview
+<img width="1904" height="869" alt="image" src="https://github.com/user-attachments/assets/0fc0006e-84aa-471f-a0e5-bed1209dde80" />
+<img width="1904" height="862" alt="image" src="https://github.com/user-attachments/assets/9db2b56c-6a36-473d-ad3c-30d2ddd4223d" />
 
 ## How to Run
 1. Download the project folder  
