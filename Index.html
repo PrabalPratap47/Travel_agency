@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wanderly Travel — Customized Packages for Young Travelers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f7f8fb;
+      --card:#ffffff;
+      --accent:#ff6b6b;
+      --muted:#667085;
+      --glass: rgba(255,255,255,0.6);
+      --radius:16px;
+      --maxw:1180px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:linear-gradient(180deg,var(--bg),#ffffff);
+      color:#0f172a;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.35;
+      display:flex;
+      justify-content:center;
+    }
+    .wrap{
+      width:100%;
+      max-width:var(--maxw);
+      padding:24px;
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:8px 0 20px;
+    }
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      text-decoration:none;
+      color:inherit;
+    }
+    .logo{
+      width:52px;
+      height:52px;
+      border-radius:12px;
+      background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      color:white;
+      box-shadow:0 6px 20px rgba(17,24,39,0.06);
+    }
+    nav{display:flex;gap:18px;align-items:center}
+    .nav-link{color:var(--muted);text-decoration:none;font-weight:600}
+    .nav-cta{
+      padding:10px 14px;
+      border-radius:10px;
+      background:transparent;
+      border:2px solid transparent;
+      font-weight:700;
+      cursor:pointer;
+    }
+    .btn-primary{
+      background:linear-gradient(90deg,var(--accent),#ff8a65);
+      color:white;
+      padding:10px 16px;
+      border-radius:12px;
+      font-weight:700;
+      border:none;
+      cursor:pointer;
+      box-shadow:0 8px 24px rgba(255,107,107,0.18);
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:1fr 420px;
+      gap:28px;
+      align-items:center;
+      margin-top:10px;
+    }
+    .hero-left{
+      background:linear-gradient(180deg, rgba(255,255,255,0.65), rgba(255,255,255,0.45));
+      padding:28px;
+      border-radius:18px;
+      box-shadow:0 10px 30px rgba(15,23,42,0.06);
+      backdrop-filter: blur(6px);
+    }
+    .eyebrow{color:var(--accent);font-weight:700; letter-spacing:0.4px}
+    h1{font-size:32px;margin:12px 0 6px;line-height:1.05}
+    p.lead{color:var(--muted);margin:8px 0 18px}
+    .search-row{
+      display:flex;
+      gap:8px;
+      margin-top:10px;
+    }
+    .search-row input{
+      flex:1;
+      padding:12px 14px;
+      border-radius:12px;
+      border:1px solid #e6e9ef;
+      font-size:14px;
+    }
+    .offers{
+      display:flex;
+      gap:10px;
+      margin-top:16px;
+      flex-wrap:wrap;
+    }
+    .chip{
+      background:#fff;
+      background-image: url("C:/Users/Prabal/Desktop/Assignments/Travel_agency/images/happy-caucasian-pretty-long-hair-elegant-tourist-woman-dress-with-red-suitcase-outside-hotel.jpg");
+      padding:10px 12px;
+      border-radius:999px;
+      box-shadow:0 6px 18px rgba(12,18,25,0.04);
+      font-weight:600;
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+
+    .hero-right{
+      position:relative;
+      height:420px;
+      border-radius:18px;
+      overflow:hidden;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.05)),
+        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80&auto=format&fit=crop') center/cover no-repeat;
+      box-shadow:0 18px 40px rgba(15,23,42,0.12);
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      padding:18px;
+      color:white;
+    }
+    .hero-card{
+      background:linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      padding:12px;
+      border-radius:12px;
+      backdrop-filter: blur(4px);
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      align-items:center;
+    }
+    .trust{
+      display:flex;
+      gap:8px;
+      margin-top:14px;
+      align-items:center;
+      color:rgba(255,255,255,0.95);
+      font-weight:600;
+      font-size:14px;
+    }
+
+    section.packages{
+      margin-top:30px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:14px;
+      padding:14px;
+      box-shadow:0 10px 30px rgba(15,23,42,0.05);
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .card img{width:100%;height:160px;object-fit:cover;border-radius:10px}
+    .card h3{margin:0;font-size:18px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+    .card .meta{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+    .price{font-weight:800;color:var(--accent)}
+
+    .highlight{
+      margin-top:28px;
+      display:flex;
+      gap:12px;
+      align-items:center;
+      background:linear-gradient(90deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));
+      padding:12px 14px;
+      border-radius:12px;
+      box-shadow:0 8px 20px rgba(12,18,25,0.04);
+    }
+
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
+
+    footer{
+      margin-top:40px;
+      padding:24px 0 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      border-top:1px solid #eef2f6;
+    }
+
+    .partners{display:flex;gap:10px;align-items:center}
+    .partner{width:72px;height:36px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;color:#94a3b8;box-shadow:0 8px 20px rgba(12,18,25,0.04)}
+
+    .testimonials{display:flex;gap:12px;flex-direction:column}
+    .test{background:#fff;border-radius:12px;padding:12px;box-shadow:0 8px 20px rgba(12,18,25,0.04)}
+
+    .cta-row{display:flex;gap:12px;align-items:center}
+
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;row-gap:16px}
+      .hero-right{height:320px}
+      section.packages{grid-template-columns:repeat(2,1fr)}
+      .grid-2{grid-template-columns:1fr}
+    }
+    @media (max-width:560px){
+      .wrap{padding:16px}
+      header{align-items:flex-start;gap:8px}
+      nav{display:none}
+      .hero-right{height:260px}
+      section.packages{grid-template-columns:1fr}
+    }
+
+    /* Email modal */
+    .modal-backdrop{
+      position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(3,7,18,0.45);z-index:1200;
+    }
+    .modal{
+      width:100%;max-width:520px;background:var(--card);border-radius:14px;padding:20px;box-shadow:0 30px 80px rgba(8,16,30,0.4);
+    }
+    .modal h4{margin:0 0 8px}
+    .modal p{margin:0 0 16px;color:var(--muted)}
+    .modal .row{display:flex;gap:10px}
+    .modal input{flex:1;padding:12px;border-radius:10px;border:1px solid #e6e9ef}
+    .close-x{background:transparent;border:none;font-weight:800;cursor:pointer;padding:6px 8px}
+    .small{font-size:13px;color:var(--muted)}
+    .success{color:green;font-weight:700}
+
+  </style>
+</head>
+<body>
+  <div class="wrap" role="main">
+    <header>
+      <a class="brand" href="#" aria-label="Wanderly Home">
+        <div class="logo">W</div>
+        <div>
+          <div style="font-weight:800">Wanderly</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:2px">Travel for curious souls</div>
+        </div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <a class="nav-link" href="#packages">Packages</a>
+        <a class="nav-link" href="#how">How it Works</a>
+        <a class="nav-link" href="#testimonials">Testimonials</a>
+        <button class="btn-primary" id="exploreBtn">Explore Packages</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-label="Hero">
+        <div class="hero-left">
+          <div class="eyebrow">Modern Indian Travel Agency</div>
+          <h1>Tailor-made trips for young explorers — domestic & international.</h1>
+          <p class="lead">Curated adventures, flexible dates, and local experiences that make every trip unforgettable. Affordable packages, student discounts and custom honeymoon itineraries.</p>
+
+          <div class="search-row" role="search" aria-label="Search destinations">
+            <input id="q" type="search" placeholder="Search city, experience or package (eg. Leh, Bali, honeymoon)"/>
+            <button class="btn-primary" id="searchBtn">Search</button>
+          </div>
+
+          <div class="offers" aria-hidden="false">
+            <div class="chip">Domestic Tours</div>
+            <div class="chip">International Trips</div>
+            <div class="chip">Honeymoon Packages</div>
+            <div class="chip">Custom Itineraries</div>
+          </div>
+
+          <div class="grid-2">
+            <div class="highlight">
+              <div style="flex:1">
+                <div style="font-weight:800">Fast booking</div>
+                <div class="small">Book and confirm within 24 hours</div>
+              </div>
+              <div style="text-align:right">
+                <div style="font-weight:800">Easy Payment</div>
+                <div class="small">EMI & split-pay</div>
+              </div>
+            </div>
+
+            <div class="highlight">
+              <div style="flex:1">
+                <div style="font-weight:800">Local guides</div>
+                <div class="small">Handpicked & verified</div>
+              </div>
+              <div style="text-align:right">
+                <div style="font-weight:800">Flexible change</div>
+                <div class="small">Free reschedule on many packages</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-right" aria-label="Featured destination">
+          <div class="hero-card" role="note">
+            <div>
+              <div style="font-weight:800">Kashmir Getaway</div>
+              <div style="font-size:13px">4 nights · from ₹23,999</div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-size:12px">Starting</div>
+              <div style="font-weight:700;font-size:18px">₹23,999</div>
+            </div>
+          </div>
+
+          <div class="trust" style="margin-top:14px">
+            <div style="display:flex;gap:8px;align-items:center">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="white" opacity="0.95"/></svg>
+              <div style="font-weight:600">4.8 · 10k+ reviews</div>
+            </div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.9);margin-left:12px">Trusted by thousands of young travelers</div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="packages" class="packages" aria-label="Package offerings">
+        <article class="card" role="article" aria-labelledby="domesticTitle">
+          <img src="https://www.irctctourism.com/domestic-tour-packages-in-india/img/1stsection.jpg" alt="Domestic tourism image">
+          <h3 id="domesticTitle">Domestic Tours</h3>
+          <p>Majestic mountains, serene beaches and cultural city escapes — thoughtfully priced for students and young professionals.</p>
+          <div class="meta">
+            <div class="small">From 2 days to 10+ days</div>
+            <div class="price">From ₹6,499</div>
+          </div>
+          <div style="display:flex;gap:10px;margin-top:8px">
+            <button class="nav-cta" onclick="openEmailModal('https://example.com/domestic')">View</button>
+            <button class="btn-primary" onclick="openEmailModal('https://example.com/domestic')">Book</button>
+          </div>
+        </article>
+
+        <article class="card" role="article" aria-labelledby="internationalTitle">
+          <img src="https://blog.dookinternational.com/images/post-media/UVuz71721810086.jpg" alt="International tourism image">
+          <h3 id="internationalTitle">International Tours</h3>
+          <p>Group trips to Bali, Thailand, Europe and beyond with local experiences and wallet-friendly routes.</p>
+          <div class="meta">
+            <div class="small">7–14 days typical</div>
+            <div class="price">From ₹29,999</div>
+          </div>
+          <div style="display:flex;gap:10px;margin-top:8px">
+            <button class="nav-cta" onclick="openEmailModal('https://example.com/international')">View</button>
+            <button class="btn-primary" onclick="openEmailModal('https://example.com/international')">Book</button>
+          </div>
+        </article>
+
+        <article class="card" role="article" aria-labelledby="honeymoonTitle">
+          <img src="https://images.unsplash.com/photo-1519677100203-a0e668c92439?w=1200&q=80&auto=format&fit=crop" alt="Honeymoon image">
+          <h3 id="honeymoonTitle">Honeymoon Packages</h3>
+          <p>Private, romantic stays with curated experiences — stress-free planning and delightful surprises.</p>
+          <div class="meta">
+            <div class="small">2–7 days</div>
+            <div class="price">From ₹39,999</div>
+          </div>
+          <div style="display:flex;gap:10px;margin-top:8px">
+            <button class="nav-cta" onclick="openEmailModal('https://example.com/honeymoon')">View</button>
+            <button class="btn-primary" onclick="openEmailModal('https://example.com/honeymoon')">Book</button>
+          </div>
+        </article>
+      </section>
+
+      <section id="how" style="margin-top:26px">
+        <div style="display:flex;justify-content:space-between;gap:20px;align-items:center">
+          <div style="flex:1">
+            <h2 style="margin:0 0 8px">How it works</h2>
+            <p class="small" style="max-width:560px">Tell us your style, pick dates, and we'll design a local-first itinerary. Transparent pricing, vetted partners, and 24/7 support on trip days.</p>
+            <div style="display:flex;gap:10px;margin-top:12px">
+              <div style="background:var(--card);padding:12px;border-radius:12px;box-shadow:0 8px 20px rgba(12,18,25,0.04)">
+                <div style="font-weight:800">1</div>
+                <div class="small">Choose a package</div>
+              </div>
+              <div style="background:var(--card);padding:12px;border-radius:12px;box-shadow:0 8px 20px rgba(12,18,25,0.04)">
+                <div style="font-weight:800">2</div>
+                <div class="small">Add custom requests</div>
+              </div>
+              <div style="background:var(--card);padding:12px;border-radius:12px;box-shadow:0 8px 20px rgba(12,18,25,0.04)">
+                <div style="font-weight:800">3</div>
+                <div class="small">Confirm & travel</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="width:360px">
+            <div class="testimonials" id="testimonials" aria-label="Testimonials">
+              <div class="test">
+                <div style="font-weight:800">Aria S.</div>
+                <div class="small">“Perfect itinerary, amazing local guide and incredible value.”</div>
+              </div>
+              <div class="test">
+                <div style="font-weight:800">Rohan P.</div>
+                <div class="small">“Booked a last-minute trip and the team handled everything.”</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div style="display:flex;gap:12px;align-items:center">
+          <div style="font-weight:800">Wanderly</div>
+          <div class="small">© <span id="year"></span> All rights reserved</div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:center">
+          <div class="partners" aria-hidden="true">
+            <div class="partner">YAT</div>
+            <div class="partner">Fly</div>
+            <div class="partner">Stay</div>
+          </div>
+          <div class="cta-row">
+            <button class="nav-cta" onclick="openEmailModal()">Join Waitlist</button>
+            <a class="nav-link" href="mailto:prabalpratapsingh0041@gmail.com">Contact</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" role="document">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+        <div>
+          <h4>Get the link — quick</h4>
+          <div class="small">Enter your email to view the full package details</div>
+        </div>
+        <button class="close-x" id="closeModal" aria-label="Close">✕</button>
+      </div>
+
+      <p class="small">We'll send a one-time link and occasional deals. You can unsubscribe anytime.</p>
+
+      <div style="display:flex;gap:10px;margin-top:14px">
+        <input id="emailInput" type="email" placeholder="you@domain.com" aria-label="Email address for package link">
+        <button class="btn-primary" id="sendBtn">Send & Continue</button>
+      </div>
+      <div style="margin-top:12px;display:flex;justify-content:space-between;align-items:center">
+        <div class="small">Secure payments · Verified partners</div>
+        <div id="modalMsg" class="small" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const modal = document.getElementById('modal');
+    const emailInput = document.getElementById('emailInput');
+    const modalMsg = document.getElementById('modalMsg');
+    let pendingRedirect = null;
+
+    function isValidEmail(e){ return /\S+@\S+\.\S+/.test(e); }
+
+    function openEmailModal(targetUrl){
+      pendingRedirect = targetUrl || null;
+      modal.style.display = 'flex';
+      modal.setAttribute('aria-hidden','false');
+      emailInput.value = '';
+      modalMsg.textContent = '';
+      emailInput.focus();
+    }
+
+    function closeEmailModal(){
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden','true');
+      pendingRedirect = null;
+    }
+
+    document.getElementById('closeModal').addEventListener('click', closeEmailModal);
+    document.getElementById('sendBtn').addEventListener('click', function(){
+      const email = emailInput.value.trim();
+      if(!isValidEmail(email)){
+        modalMsg.textContent = 'Enter a valid email';
+        modalMsg.style.color = 'crimson';
+        return;
+      }
+      modalMsg.style.color = 'green';
+      modalMsg.textContent = 'Sending link...';
+      localStorage.setItem('wanderly_subscriber', JSON.stringify({email:email,ts:Date.now()}));
+      setTimeout(function(){
+        modalMsg.textContent = 'Link sent — redirecting';
+        if(pendingRedirect){
+          window.location.href = pendingRedirect;
+        } else {
+          closeEmailModal();
+        }
+      },900);
+    });
+
+    document.getElementById('exploreBtn').addEventListener('click', function(){
+      document.querySelector('#packages').scrollIntoView({behavior:'smooth'});
+    });
+
+    document.getElementById('searchBtn').addEventListener('click', function(){
+      const q = document.getElementById('q').value.trim();
+      if(!q){ openEmailModal(); return; }
+      openEmailModal('https://example.com/search?q=' + encodeURIComponent(q));
+    });
+
+    window.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') closeEmailModal();
+    });
+
+    document.addEventListener('click', function(e){
+      if(e.target === modal) closeEmailModal();
+    });
+  </script>
+</body>
+</html>
